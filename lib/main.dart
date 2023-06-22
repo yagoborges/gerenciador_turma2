@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gerenciador_turma/src/home/home.dart';
-import 'package:gerenciador_turma/src/shared/app_scaffold.dart';
+import 'package:gerenciador_turma/src/turma/turma_page.dart';
+
 import 'package:gerenciador_turma/src/themes/color_schemes.g.dart';
 
 void main() {
@@ -12,9 +12,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
-      title: 'Escolas Seguras',
+      title: 'Gerenciador de Turmas',
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: lightColorScheme,
@@ -29,11 +28,11 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
       ),
-      initialRoute: '/auth/login',
+      initialRoute: '/turma_page',
       routes: {
-        '/auth/login': (context) => const HomePage(),
+        //'/auth/login': (context) => const TurmaPage(),
         //'/auth/registration': (context) => const RegistrationPage(),
-        //'/home': (context) => const HomePage(),
+        '/turma_page': (context) => const TurmaPage(),
         //'/complaint': (context) => const ComplaintPage(),
         //'/panel': (context) => PanelPage(),
       },

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -17,25 +16,25 @@ class AppDrawer extends StatelessWidget {
               children: [
                 CircleAvatar(
                   child: Text('Usuário'
-                    //authService.user?.name[0] ?? '-',
-                  ),
+                      //authService.user?.name[0] ?? '-',
+                      ),
                 ),
                 const SizedBox(
                   width: 8.0,
                 ),
                 Text('Usuário'
-                  //StringHelpers.truncateWithEllipsis(
+                    //StringHelpers.truncateWithEllipsis(
                     //15,
                     //authService.user?.name ?? '-',
-                  //),
-                ),
+                    //),
+                    ),
               ],
             ),
           ),
           ListTile(
-            title: const Text('Home'),
+            title: const Text('Turmas'),
             onTap: () {
-              //Navigator.popAndPushNamed(context, '/home');
+              Navigator.popAndPushNamed(context, '/turma_page');
             },
           ),
           ListTile(
