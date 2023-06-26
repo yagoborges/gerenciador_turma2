@@ -38,15 +38,21 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Denúncias'),
+            title: const Text('Professores'),
             onTap: () {
-              //Navigator.popAndPushNamed(context, '/complaint');
+              Navigator.popAndPushNamed(context, '/professor_page');
             },
           ),
           ListTile(
-            title: const Text('Painel'),
+            title: const Text('Disciplinas'),
             onTap: () {
-              //Navigator.pushNamed(context, '/panel');
+              Navigator.pushNamed(context, '/disciplina_page');
+            },
+          ),
+          ListTile(
+            title: const Text('Alunos'),
+            onTap: () {
+              Navigator.pushNamed(context, '/aluno_page');
             },
           ),
           ListTile(

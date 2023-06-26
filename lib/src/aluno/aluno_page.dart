@@ -1,30 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:gerenciador_turma/src/shared/app_scaffold.dart';
 
-class TurmaPage extends StatelessWidget {
-  const TurmaPage({super.key});
+class AlunoPage extends StatelessWidget {
+  const AlunoPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     //final authService = Provider.of<AuthService>(context);
-    final listaTurmas = [
+    final listaAlunos = [
+      {'matricula': '1', 'nome_aluno': 'Liliane Borges', 'curso': 'Matemática'},
       {
-        'cod_turma': '1',
-        'nome_disc': 'Educação Matemática',
-        'anosem': '2023/01',
-        'nome_prof': 'Thiago Porto'
+        'matricula': '2',
+        'nome_aluno': 'Yago Leandro Borges',
+        'curso': 'Sistemas de Informação'
       },
       {
-        'cod_turma': '2',
-        'nome_disc': 'Desenvolvimento Mobile',
-        'anosem': '2023/01',
-        'nome_prof': 'Laura Beatriz'
-      },
-      {
-        'cod_turma': '3',
-        'nome_disc': 'Análise de Sistemas',
-        'anosem': '2023/01',
-        'nome_prof': 'Lacordaire Kermel Cury'
+        'matricula': '3',
+        'nome_aluno': 'José Felipe Duarte',
+        'curso': 'Sistemas de Informação'
       },
     ];
 
@@ -37,20 +30,20 @@ class TurmaPage extends StatelessWidget {
       ),
       child: ListView.builder(
         padding: const EdgeInsets.all(16),
-        itemCount: listaTurmas.length,
+        itemCount: listaAlunos.length,
         itemBuilder: (context, i) {
-          var turmas = listaTurmas[i];
+          var alunos = listaAlunos[i];
           return ListTile(
-            title: Text("${turmas['nome_disc']} - ${turmas['anosem']}"),
-            subtitle: Text("Professor(a): ${turmas['nome_prof']}"),
+            title: Text(alunos['nome_aluno'].toString()),
+            subtitle: Text("Curso: ${alunos['curso']}"),
             trailing: Container(
-              width: 120,
+              width: 80,
               child: Row(children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.remove_red_eye_rounded),
-                  color: Colors.grey,
-                ),
+                //IconButton(
+                //onPressed: () {},
+                //icon: Icon(Icons.remove_red_eye_rounded),
+                //color: Colors.grey,
+                //),
                 IconButton(
                   onPressed: () {},
                   icon: Icon(Icons.edit),

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gerenciador_turma/src/aluno/aluno_page.dart';
+import 'package:gerenciador_turma/src/disciplina/disciplina_page.dart';
+import 'package:gerenciador_turma/src/login/login.dart';
+import 'package:gerenciador_turma/src/professor/professor_page.dart';
 import 'package:gerenciador_turma/src/turma/turma_page.dart';
 
 import 'package:gerenciador_turma/src/themes/color_schemes.g.dart';
@@ -28,13 +32,13 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
       ),
-      initialRoute: '/turma_page',
+      initialRoute: '/login_page',
       routes: {
-        //'/auth/login': (context) => const TurmaPage(),
-        //'/auth/registration': (context) => const RegistrationPage(),
+        '/professor_page': (context) => const ProfessorPage(),
+        '/disciplina_page': (context) => const DisciplinaPage(),
         '/turma_page': (context) => const TurmaPage(),
-        //'/complaint': (context) => const ComplaintPage(),
-        //'/panel': (context) => PanelPage(),
+        '/aluno_page': (context) => const AlunoPage(),
+        '/login_page': (context) => Login(),
       },
     );
   }
