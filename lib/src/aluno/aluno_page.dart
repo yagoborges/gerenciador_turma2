@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+//import 'package:gerenciador_turma/src/aluno/entity_aluno.dart';
+import 'package:gerenciador_turma/src/database/database_helper_aluno.dart';
 import 'package:gerenciador_turma/src/shared/app_scaffold.dart';
 
 class AlunoPage extends StatelessWidget {
-  const AlunoPage({super.key});
+  AlunoPage({super.key});
+  final dBHelper = DatabaseHelperAluno.instance;
 
   @override
   Widget build(BuildContext context) {
     //final authService = Provider.of<AuthService>(context);
+    // List<Aluno> listaAlunos = dBHelper.buscar();
     final listaAlunos = [
       {'matricula': '1', 'nome_aluno': 'Liliane Borges', 'curso': 'Matemática'},
       {
@@ -25,7 +29,9 @@ class AlunoPage extends StatelessWidget {
       pageTitle: const Text('Alunos'),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed('/aluno_form');
+        },
         child: const Icon(Icons.add),
       ),
       child: ListView.builder(

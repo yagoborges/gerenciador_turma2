@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:gerenciador_turma/src/aluno/aluno_form.dart';
 import 'package:gerenciador_turma/src/aluno/aluno_page.dart';
+import 'package:gerenciador_turma/src/disciplina/disciplina_form.dart';
 import 'package:gerenciador_turma/src/disciplina/disciplina_page.dart';
 import 'package:gerenciador_turma/src/login/login.dart';
+import 'package:gerenciador_turma/src/professor/professor_form.dart';
 import 'package:gerenciador_turma/src/professor/professor_page.dart';
+import 'package:gerenciador_turma/src/turma/turma_form.dart';
 import 'package:gerenciador_turma/src/turma/turma_page.dart';
 
 import 'package:gerenciador_turma/src/themes/color_schemes.g.dart';
@@ -37,8 +41,12 @@ class MyApp extends StatelessWidget {
         '/professor_page': (context) => const ProfessorPage(),
         '/disciplina_page': (context) => const DisciplinaPage(),
         '/turma_page': (context) => const TurmaPage(),
-        '/aluno_page': (context) => const AlunoPage(),
+        '/aluno_page': (context) => AlunoPage(),
         '/login_page': (context) => Login(),
+        '/aluno_form': (context) => AlunoForm(),
+        '/disciplina_form': (context) => const DisciplinaForm(),
+        '/professor_form': (context) => const ProfessorForm(),
+        '/turma_form': (context) => const TurmaForm(),
       },
     );
   }

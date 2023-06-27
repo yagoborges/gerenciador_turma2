@@ -29,7 +29,9 @@ class DisciplinaPage extends StatelessWidget {
       pageTitle: const Text('Disciplinas'),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed('/disciplina_form');
+        },
         child: const Icon(Icons.add),
       ),
       child: ListView.builder(

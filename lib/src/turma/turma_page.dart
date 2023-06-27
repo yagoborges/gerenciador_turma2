@@ -29,7 +29,7 @@ class TurmaPage extends StatelessWidget {
     ];
 
     return AppScaffold(
-      pageTitle: const Text('Alunos'),
+      pageTitle: const Text('Turmas'),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
         onPressed: () {},

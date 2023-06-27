@@ -1,7 +1,7 @@
 class Aluno {
-  int? cod_aluno;
+  dynamic? cod_aluno;
   String? nome_aluno;
-  String? curso;
+  dynamic? curso;
 
-  Aluno(this.cod_aluno, this.nome_aluno, this.curso);
+  Aluno({required this.cod_aluno, required nome_aluno, required curso});
 }
