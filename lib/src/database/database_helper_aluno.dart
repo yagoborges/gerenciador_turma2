@@ -25,6 +25,12 @@ class DatabaseHelperAluno {
       'Authorization': 'Bearer $testeToken'
     };
     print('O cabeçalho é: $headers');
+    var alunoJson = jsonEncode({
+      'matricula': aluno.cod_aluno,
+      'nome_aluno': aluno.nome_aluno,
+      'curso': aluno.curso
+    });
+    print('JSON ALUNO: $alunoJson');
 
     var statusCode = 0;
     var resposta;
@@ -32,12 +38,12 @@ class DatabaseHelperAluno {
     if (aluno.cod_aluno == null) {
       print('Código do aluno Nulo');
       //fazer as alterações para os campos de alunos
-      var alunoJson =
-          jsonEncode({'nome_aluno': aluno.nome_aluno, 'curso': aluno.curso});
-      print('JSON ALUNO: $alunoJson');
+
       resposta = await http.post(uriREST, headers: headers, body: alunoJson);
+      print(resposta.toString());
     } else {
-      var alunoJson = jsonEncode({
+      print('Entrou no else.');
+      alunoJson = jsonEncode({
         'matricula': aluno.cod_aluno,
         'nome_aluno': aluno.nome_aluno,
         'curso': aluno.curso

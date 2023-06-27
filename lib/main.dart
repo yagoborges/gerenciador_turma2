@@ -29,13 +29,13 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
       ),
-      darkTheme: ThemeData(
+      /* darkTheme: ThemeData(
         useMaterial3: true,
         colorScheme: darkColorScheme,
         appBarTheme: const AppBarTheme(
           centerTitle: true,
         ),
-      ),
+      ),*/
       initialRoute: '/login_page',
       routes: {
         '/professor_page': (context) => const ProfessorPage(),
