@@ -3,23 +3,21 @@ import 'package:flutter/material.dart';
 class DisciplinaForm extends StatelessWidget {
   const DisciplinaForm({super.key});
 
-  Widget nomeAluno() {
+  Widget nomeDisciplina() {
     return TextFormField(
-      decoration: const InputDecoration(labelText: 'Nome Aluno'),
+      decoration: const InputDecoration(labelText: 'Nome Disciplina'),
     );
   }
 
-  Widget cursoAluno() {
-    return TextFormField(
-      decoration: const InputDecoration(labelText: 'Curso'),
-    );
+  Widget ProfessorDisc() {
+    return DropdownButton(items: null, onChanged: (onChanged) {});
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cadastro de Aluno'),
+        title: Text('Cadastro de Disciplinas'),
       ),
       body: Padding(
         padding: EdgeInsets.all(10),
@@ -29,11 +27,11 @@ class DisciplinaForm extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              nomeAluno(),
+              nomeDisciplina(),
               const SizedBox(
                 height: 15,
               ),
-              cursoAluno(),
+              ProfessorDisc(),
               const SizedBox(
                 height: 40,
               ),

@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:gerenciador_turma/src/aluno/entity_aluno.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
@@ -14,7 +13,7 @@ class DatabaseHelperAluno {
     return prefs.getString('token');
   }
 
-  var uriREST = Uri.parse('http://192.168.0.139:8080/alunos');
+  var uriREST = Uri.parse('http://localhost:8080/alunos');
 
   //grava os dados no banco
   salvar(Aluno aluno) async {
@@ -25,12 +24,6 @@ class DatabaseHelperAluno {
       'Authorization': 'Bearer $testeToken'
     };
     print('O cabeçalho é: $headers');
-    var alunoJson = jsonEncode({
-      'matricula': aluno.cod_aluno,
-      'nome_aluno': aluno.nome_aluno,
-      'curso': aluno.curso
-    });
-    print('JSON ALUNO: $alunoJson');
 
     var statusCode = 0;
     var resposta;
@@ -38,12 +31,12 @@ class DatabaseHelperAluno {
     if (aluno.cod_aluno == null) {
       print('Código do aluno Nulo');
       //fazer as alterações para os campos de alunos
-
+      var alunoJson =
+          jsonEncode({'nome_aluno': aluno.nome_aluno, 'curso': aluno.curso});
+      print('JSON ALUNO: $alunoJson');
       resposta = await http.post(uriREST, headers: headers, body: alunoJson);
-      print(resposta.toString());
     } else {
-      print('Entrou no else.');
-      alunoJson = jsonEncode({
+      var alunoJson = jsonEncode({
         'matricula': aluno.cod_aluno,
         'nome_aluno': aluno.nome_aluno,
         'curso': aluno.curso
@@ -59,7 +52,7 @@ class DatabaseHelperAluno {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     var token = prefs.getString('token');
 
-    var uriREST2 = Uri.parse('http://192.168.0.139:8080/alunos');
+    var uriREST2 = Uri.parse('http://localhost:8080/alunos');
     var header = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $token'
@@ -93,7 +86,7 @@ class DatabaseHelperAluno {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     var token = prefs.getString('token');
 
-    var uriREST3 = Uri.parse('http://192.168.0.139:8080/alunos/$id');
+    var uriREST3 = Uri.parse('http://localhost:8080/alunos/$id');
     var header = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $token'
